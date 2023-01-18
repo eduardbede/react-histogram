@@ -6,6 +6,7 @@ import { scaleBand, scaleLinear } from '@visx/scale';
 import { AxisBottom, AxisLeft } from '@visx/axis';
 import { useTooltip, useTooltipInPortal } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
+import { Text } from '@visx/text';
 import useFinalData from './Components/useFinalData';
 import './App.css';
 
@@ -51,7 +52,7 @@ export default function App() {
       </div>:
       <>
         <h2>Number of posts for every month of 2019</h2>
-          <svg width={xMax} height={yMax + 50}>
+          <svg width={xMax+60} height={yMax + 50 }>
             <Group top={topMargin} left={leftMargin} >
               {data.map((d) => {
                 const month = getMonth(d);
@@ -65,7 +66,7 @@ export default function App() {
                     x={barX}
                     y={barY}
                     width={barWidth}
-                    height={barHeight}
+                    height={barHeight - 50}
                     fill="#2F74C0"
                     onMouseMove={event => {
                       const eventSvgCoords = localPoint(event);
@@ -82,10 +83,17 @@ export default function App() {
                 );
               })}
             </Group>
-            <Group top={topMargin} left={leftMargin}>
-              <AxisBottom scale={xScale} top={yMax} />
+            <Group top={topMargin} left={leftMargin} >
+              <AxisBottom scale={xScale} top={yMax - 50} 
+              tickLabelProps={(value) => {
+                return {
+                  transform: `rotate(45 ` + xScale(value) + ',-10)',
+                  y:width < 764 ? 15 : 5,
+                }
+              }}
+              />
             </Group>
-            <Group top={topMargin} left={leftMargin}>
+            <Group left={leftMargin} top={topMargin - 50} >
               <AxisLeft scale={yScale}  />
             </Group>
             <TooltipInPortal
