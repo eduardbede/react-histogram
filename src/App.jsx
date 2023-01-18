@@ -6,7 +6,6 @@ import { scaleBand, scaleLinear } from '@visx/scale';
 import { AxisBottom, AxisLeft } from '@visx/axis';
 import { useTooltip, useTooltipInPortal } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
-import { Text } from '@visx/text';
 import useFinalData from './Components/useFinalData';
 import './App.css';
 
