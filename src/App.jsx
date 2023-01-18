@@ -40,13 +40,6 @@ export default function App() {
     tooltipData
   } = useTooltip();
 
-  const tooltipStyles = {
-    fontSize:'30px',
-    height:'100%',
-    color:'black',
-    fontWeight:'bold'
-  };
-
   const topMargin = 25;
   const leftMargin = 30;
 
@@ -77,7 +70,7 @@ export default function App() {
                     onMouseMove={event => {
                       const eventSvgCoords = localPoint(event);
                       showTooltip({
-                        tooltipData: <div style={tooltipStyles}>{getPosts(d)} Posts</div>,
+                        tooltipData: <div className='tooltipStyles'>{getPosts(d)} Posts</div>,
                         tooltipTop: eventSvgCoords?.y,
                         tooltipLeft: eventSvgCoords?.x +10
                       });

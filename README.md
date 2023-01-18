@@ -2,6 +2,10 @@
 
 <p id="description">A simple JavaScript web app which displays in a histogram the number of posts created for each month of 2019. Created with React and VISX. In the development process I encountered a small problem in creating the object for displaying the data in chart based on the data received from the API which was solved with a bit of documentation related to data manipulation.</p>
 
+<h2>🚀 Demo</h2>
+
+[https://eduardbede.github.io/react-histogram/](https://eduardbede.github.io/react-histogram/)
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Download project.</p>
@@ -12,7 +16,7 @@
 npm install
 ```
 
-<p>3. After the process is done run</p>
+<p>3. After the install process is done run</p>
 
 ```
 npm run dev -- -- host
