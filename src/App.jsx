@@ -51,21 +51,21 @@ export default function App() {
       </div>:
       <>
         <h2>Number of posts for every month of 2019</h2>
-          <svg width={xMax+60} height={yMax + 50 }>
+          <svg width={xMax + 60} height={yMax + 50 }>
             <Group top={topMargin} left={leftMargin} >
               {data.map((d) => {
                 const month = getMonth(d);
                 const barWidth = xScale.bandwidth();
                 const barHeight = yMax - (yScale(getPosts(d)) ?? 0);
                 const barX = xScale(month);
-                const barY = yMax - barHeight;
+                const barY = yMax - 50 - barHeight;
                 return (
                   <Bar
                     key={`bar-${month}`}
                     x={barX}
                     y={barY}
                     width={barWidth}
-                    height={barHeight - 50}
+                    height={barHeight}
                     fill="#2F74C0"
                     onMouseMove={event => {
                       const eventSvgCoords = localPoint(event);
@@ -92,7 +92,7 @@ export default function App() {
               }}
               />
             </Group>
-            <Group left={leftMargin} top={topMargin - 50} >
+            <Group top={topMargin - 50} left={leftMargin}  >
               <AxisLeft scale={yScale}  />
             </Group>
             <TooltipInPortal
