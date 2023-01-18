@@ -1,6 +1,6 @@
 <h1 align="center" id="title">React Histogram</h1>
 
-<p id="description">A simple JavaScript web app which displays in a histogram the number of posts created for each month of 2019. Created with React and VISX. In the development process I encountered a small problem in creating the object for displaying the data based on the data received from the API which was solved with a bit of documentation related to data manipulation.</p>
+<p id="description">A simple JavaScript web app which displays in a histogram the number of posts created for each month of 2019. Created with React and VISX. In the development process I encountered a small problem in creating the object for displaying the data in chart based on the data received from the API which was solved with a bit of documentation related to data manipulation.</p>
 
 <h2>🛠️ Installation Steps:</h2>
 
